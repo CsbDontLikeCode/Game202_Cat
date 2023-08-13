@@ -1,0 +1,11 @@
+前置条件：在 Visual Studio Code 中安装插件 Live Server
+
+在编辑器任意界面使用 Ctrl+Shift+P 调出命令行窗口，输入 Live Server:Open with Live Server
+在终端中打开网页：  http-server . -p 8000
+
+页面简单交互操作：
+    按住鼠标右键旋转相机
+    通过鼠标滚轮缩放视角
+    按住鼠标左键移动相机
+    通过 GUI 调整模型的位置和大小
+
