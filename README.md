@@ -14,7 +14,7 @@ PCF(Percent Closer Filtering),其具体实现是在对点进行阴影判断时�
 应用PCF技术，并将滤波器的范围调的很大，就可以实现软阴影了，惊不惊喜，意不意外？<br>
 一个物体的软阴影的程度取决于阴影与物体的距离，而软阴影的程度又直接取决于滤波尺寸。<br>
 <div align = center>
-<img src="https://github.com/CsbDontLikeCode/Game202_Cat/blob/main/homework0/images/PCSS.png" width="180">
+<img src="https://github.com/CsbDontLikeCode/Game202_Cat/blob/main/homework0/images/PCSS.png" width="240">
 </div>
 滤波尺寸计算方法: 滤波尺寸 = (光源到阴影点的距离 - 光源到遮挡点的距离) * 光源的宽度 / 光源到遮挡点的距离<br>
 PCSS中生成深度缓冲的具体实现仍是以广源点为视点生成，只不过在判定阴影点时额外加入了光源宽度的参数。<br>
@@ -24,5 +24,5 @@ PCSS中生成深度缓冲的具体实现仍是以广源点为视点生成，只�
 2.Penumbra estimation(use the average blocker depth to determine filter size).<br>
 3.Percentage Closer Filtering.<br>
 <div align = center>
-<img src="https://github.com/CsbDontLikeCode/Game202_Cat/blob/main/homework0/images/BlockerChosenRange.png" width="180">
+<img src="https://github.com/CsbDontLikeCode/Game202_Cat/blob/main/homework0/images/BlockerChosenRange.png" width="360">
 </div>
