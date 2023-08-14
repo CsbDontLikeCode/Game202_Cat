@@ -14,5 +14,17 @@ Game202 Coursework
     软阴影相比于硬阴影，存在着从光明过渡到阴影的特性。这是因为光源往往不是单纯的一个点，而是面，因而受光源形状的影像，物体的阴影往往是软阴影。
     应用PCF技术，并将滤波器的范围调的很大，就可以实现软阴影了，惊不惊喜，意不意外？
     一个物体的软阴影的程度取决于阴影与物体的距离，而软阴影的程度又直接取决于滤波尺寸。
+
+    ![Image text](https://github.com/CsbDontLikeCode/Game202_Cat/blob/main/homework0/images/PCSS.png)
+
+    滤波尺寸计算方法: 滤波尺寸 = (光源到阴影点的距离 - 光源到遮挡点的距离) * 光源的宽度 / 光源到遮挡点的距离
+    PCSS中生成深度缓冲的具体实现仍是以广源点为视点生成，只不过在判定阴影点时额外加入了光源宽度的参数。
+    图画得不是很直观，光源到Block的深度可以直接在深度缓冲上查到，而阴影点与光源的距离也可以直接计算得出，没必要加垂直的虚线辅助理解(反倒增加了理解的成本)。
+    完整的PCSS实现流程：
+        1.Blocker search，getting the average blocker depth to determine filter size.好像是说选取一定范围内的深度缓冲纹理值求平均以计算出Blocker到光源的大概距离？？？Blocker范围选取可以根据光源面与阴影点的距离动态调节，但是怎么动态调节我没太整明白。
+        2.Penumbra estimation(use the average blocker depth to determine filter size).
+        3.Percentage Closer Filtering.
     
-    ![Image text](https://github.com/CsbDontLikeCode/Game202_Cat/blob/main/homework0/images/PCSS.png) 
+    ![Image text](https://github.com/CsbDontLikeCode/Game202_Cat/blob/main/homework0/images/BlockerChosenRange.png)
+
+
